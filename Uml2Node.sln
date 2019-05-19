@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uml2Node.Presentation", "Uml2Node.Presentation\Uml2Node.Presentation.csproj", "{466A4836-8F00-4AAE-83EB-94F859C09938}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uml2Node.Core", "Uml2Node.Core\Uml2Node.Core.csproj", "{558369A0-9B59-4D35-8F6C-B436DA5A5F3E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uml2Node.Parser", "Uml2Node.Parser\Uml2Node.Parser.csproj", "{9B97302F-36C9-4583-93C5-7D6128795B61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uml2Node.IoC", "Uml2Node.IoC\Uml2Node.IoC.csproj", "{72BAC5AE-B652-4CFC-994C-ECBF682C67B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uml2Node.Generator", "Uml2Node.Generator\Uml2Node.Generator.csproj", "{37544791-023B-459D-B2F6-DF1C16AF31A4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{466A4836-8F00-4AAE-83EB-94F859C09938}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{466A4836-8F00-4AAE-83EB-94F859C09938}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{466A4836-8F00-4AAE-83EB-94F859C09938}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{466A4836-8F00-4AAE-83EB-94F859C09938}.Release|Any CPU.Build.0 = Release|Any CPU
+		{558369A0-9B59-4D35-8F6C-B436DA5A5F3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{558369A0-9B59-4D35-8F6C-B436DA5A5F3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{558369A0-9B59-4D35-8F6C-B436DA5A5F3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{558369A0-9B59-4D35-8F6C-B436DA5A5F3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B97302F-36C9-4583-93C5-7D6128795B61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B97302F-36C9-4583-93C5-7D6128795B61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B97302F-36C9-4583-93C5-7D6128795B61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B97302F-36C9-4583-93C5-7D6128795B61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72BAC5AE-B652-4CFC-994C-ECBF682C67B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72BAC5AE-B652-4CFC-994C-ECBF682C67B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72BAC5AE-B652-4CFC-994C-ECBF682C67B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72BAC5AE-B652-4CFC-994C-ECBF682C67B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37544791-023B-459D-B2F6-DF1C16AF31A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37544791-023B-459D-B2F6-DF1C16AF31A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37544791-023B-459D-B2F6-DF1C16AF31A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37544791-023B-459D-B2F6-DF1C16AF31A4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
