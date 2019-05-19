@@ -18,7 +18,8 @@ namespace Uml2Node.Parser.Services
 {
     public class ParserService : IParserService
     {
-        public List<Entity> Process(string imagePath)
+        /// <inheritdoc />
+        public List<Entity> Parse(string imagePath)
         {
             FileHelper.ClearTempDirectory();
 
@@ -39,11 +40,15 @@ namespace Uml2Node.Parser.Services
             return entities;
         }
 
+        /// <summary>
+        /// Detects squares inside the provided image and makes image slices for each square.
+        /// </summary>
+        /// <param name="imagePath">Path to the diagram image.</param>
+        /// <returns>Bitmap of the diagram image with marked table squares.</returns>
         private Bitmap Slice(string imagePath)
         {
             Bitmap image = PreProcess((Bitmap)Bitmap.FromFile(imagePath));
             Bitmap fakeImage = new Bitmap(image.Width, image.Height);
-
 
             BlobCounter blobCounter = new BlobCounter();
             blobCounter.FilterBlobs = true;
@@ -75,11 +80,9 @@ namespace Uml2Node.Parser.Services
                 shapeChecker.IsQuadrilateral(edgePoints, out cornerPoints);
 
                 List<System.Drawing.Point> Points = new List<System.Drawing.Point>();
-                foreach (var point in cornerPoints)
-                {
-                    Points.Add(new System.Drawing.Point(point.X, point.Y));
-                }
 
+                foreach (var point in cornerPoints)
+                    Points.Add(new System.Drawing.Point(point.X, point.Y));
 
                 g.DrawPolygon(new Pen(Color.Red, 5.0f), Points.ToArray());
             }
@@ -87,23 +90,38 @@ namespace Uml2Node.Parser.Services
             return fakeImage;
         }
 
+        /// <summary>
+        /// Crops the bitmap of the diagram.
+        /// </summary>
+        /// <param name="image">Bitmap of the entire diagram image.</param>
+        /// <param name="x">X coordinate for crop begin.</param>
+        /// <param name="y">Y coordinate for crop begin.</param>
+        /// <param name="width">Width of the crop.</param>
+        /// <param name="height">Height of the crop.</param>
+        /// <returns>Bitmap of the cropped image.</returns>
         private Bitmap Crop(Bitmap image, int x, int y, int width, int height)
         {
-            Crop filter = new Crop(new Rectangle(x, y, width, height));
-            return filter.Apply(image);
+            return new Crop(new Rectangle(x, y, width, height)).Apply(image);
         }
 
+        /// <summary>
+        /// Applies the grayscale and treshold filter to the original bitmap.
+        /// </summary>
+        /// <param name="bmp">Original bitmap.</param>
+        /// <returns>Bitmap with filters applied.</returns>
         private Bitmap PreProcess(Bitmap bmp)
         {
-            Grayscale gfilter = new Grayscale(0.2125, 0.7154, 0.0721);
-            BradleyLocalThresholding thfilter = new BradleyLocalThresholding();
-
-            bmp = gfilter.Apply(bmp);
-            thfilter.ApplyInPlace(bmp);
+            bmp = new Grayscale(0.2125, 0.7154, 0.0721).Apply(bmp);
+            new BradleyLocalThresholding().ApplyInPlace(bmp);
 
             return bmp;
         }
 
+        /// <summary>
+        /// Processes each table image separately.
+        /// </summary>
+        /// <param name="imagePaths">Image of the each table from the diagram.</param>
+        /// <returns>List of text contents for each table.</returns>
         private List<string> ProcessTables(List<string> imagePaths)
         {
             List<string> entityStrings = new List<string>();

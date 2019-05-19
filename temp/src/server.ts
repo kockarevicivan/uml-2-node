@@ -9,10 +9,10 @@ import mongoose from 'mongoose';
 import config from './config';
 import authenticationRoutes from './routes/authentication';
 
-import userproiectroleRoutes from './routes/userproiectrole';
+import timesheetcostcenterRoutes from './routes/timesheetcostcenter';
 import mRoutes from './routes/m';
-import timesheethourRoutes from './routes/timesheethour';
-import companyRoutes from './routes/company';
+import proiectcostcenterRoutes from './routes/proiectcostcenter';
+import proiectdocumentRoutes from './routes/proiectdocument';
 
 
 
@@ -26,10 +26,10 @@ mongoose.Promise = bluebird;
 mongoose.connect(config.databaseUrl, { useNewUrlParser: true });
 
 // Map routes.
-app.use('/userproiectrole', userproiectroleRoutes);
+app.use('/timesheetcostcenter', timesheetcostcenterRoutes);
 app.use('/m', mRoutes);
-app.use('/timesheethour', timesheethourRoutes);
-app.use('/company', companyRoutes);
+app.use('/proiectcostcenter', proiectcostcenterRoutes);
+app.use('/proiectdocument', proiectdocumentRoutes);
 
 
 app.use('/authentication', authenticationRoutes);

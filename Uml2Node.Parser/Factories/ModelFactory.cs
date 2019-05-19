@@ -6,6 +6,11 @@ namespace Uml2Node.Parser.Factories
 {
     internal static class ModelFactory
     {
+        /// <summary>
+        /// Creates an instance of the entity object.
+        /// </summary>
+        /// <param name="entityString">JSON string of the entity.</param>
+        /// <returns>Entity object.</returns>
         internal static Entity CreateEntity(string entityString)
         {
             Entity newEntity = new Entity();
@@ -24,6 +29,11 @@ namespace Uml2Node.Parser.Factories
             return newEntity;
         }
 
+        /// <summary>
+        /// Creates an instance of the field object.
+        /// </summary>
+        /// <param name="fieldString">JSON string of the field.</param>
+        /// <returns>Field object.</returns>
         private static Field CreateField(string fieldString)
         {
             Field newField = new Field();

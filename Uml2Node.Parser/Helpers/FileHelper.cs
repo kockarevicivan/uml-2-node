@@ -4,6 +4,9 @@ namespace Uml2Node.Parser.Helpers
 {
     internal static class FileHelper
     {
+        /// <summary>
+        /// Clears the temporary directory for images.
+        /// </summary>
         internal static void ClearTempDirectory()
         {
             DirectoryInfo di = new DirectoryInfo("temp");
